@@ -15,7 +15,7 @@ $(document).ready(function() {
       // event.preventDefault();
     $('html').animate({scrollTop: 0}, duration);
       // return false;
-    })
+    });
   });
 
 
@@ -69,7 +69,7 @@ $(document).ready(function(){
     rules: {
       comment_body: {
         required: true,
-        max-lenght: 500
+        minlength: 5
       }
     },
       error: function(error, element){

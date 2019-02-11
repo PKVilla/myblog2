@@ -21,9 +21,9 @@ class isAdmin
         {
             return $next($request);     
         }
-        elseif ($this->Auth->getUser()->admin !==1) {
-            rerutn error('your not allowed on this page');
-        }
+        // elseif ($this->Auth->getUser()->admin !==1) {
+        //     rerutn error('your not allowed on this page');
+        // }
             return redirect('/allpost');
    }
 }

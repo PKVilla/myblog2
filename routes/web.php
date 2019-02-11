@@ -15,43 +15,37 @@ Route::get('/', function () {
     return view('pages.landing');
 });
 
- // Route::middleware(['admin'])->group(function(){
+ Route::middleware(['admin'])->group(function(){
 
- 	route::get('/allpost', 'Postcontroller@allPost');
- 	route::post('/addpost', 'Postcontroller@savePost');
- 	route::get('/addpost/add', 'Postcontroller@showAddPost');
- 	route::get('/editpost/{id}/edit', 'Postcontroller@showEditPostForm');
- 	route::put('/editpost/{id}/edit', 'Postcontroller@editForm');
- 	route::delete('/deletepost/{id}/delete', 'Postcontroller@deletePost');
-
-// });
-
-route::middleware(['auth'])->group(function(){
-
-	route::get('/welcome', 'Postcontroller@showPosts');
-	route::get('/perblog/{id}', 'Postcontroller@showPerBlogPost');
-	Route::post('/comment/store', 'CommentController@store')->name('comment.add');
-	Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+ 	route::get('/allpost', 'PostController@allPost');
+ 	route::post('/addpost', 'PostController@savePost');
+ 	route::get('/addpost/add', 'PostController@showAddPost');
+ 	route::get('/editpost/{id}/edit', 'PostController@showEditPostForm');
+ 	route::put('/editpost/{id}/edit', 'PostController@editForm');
+ 	route::delete('/deletepost/{id}/delete', 'PostController@deletePost');
 
 });
 
+route::middleware(['auth'])->group(function(){
 
+	route::get('/perblog/{id}', 'PostController@showPerBlogPost');
+	Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+	Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+	route::get('/welcome', 'PostController@showPosts');
+	route::post('/like', 'PostController@LikePost')->name('like');
 
-
-Route::post('/like', 'PostController@LikePost')->name('like');
+});
 
 route::get('/landing', 'NavController@goToLanding');
-
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/redirect/facebook', 'FacebookController@redirect');
+Route::get('/redirect/facebook', 'FacebookController@redirect');
 
-// Route::get('/callback/facebook', 'FacebookController@callback');
+Route::get('/callback/facebook', 'FacebookController@callback');
 
+Route::get('/redirect/google', 'GoogleController@redirect');
 
-// Route::get('/redirect/google', 'GoogleController@redirect');
-
-// Route::get('/callback', 'GoogleController@callback');
+Route::get('/callback', 'GoogleController@callback');

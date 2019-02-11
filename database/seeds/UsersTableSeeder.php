@@ -24,10 +24,10 @@ class UsersTableSeeder extends Seeder
                 'email' => 'flippinskip@gmail.com',
                 'email_verified_at' => NULL,
                 'admin' => 1,
-                'password' => 'Seeker',
+                'password' => Hash::make('Seeker'),
                 'remember_token' => NULL,
-                'created_at' => NULL,
-                'updated_at' => NULL,
+                'created_at' => date('Y-m-d', time()),
+                'updated_at' => date('Y-m-d', time()),
             ),
         ));
         

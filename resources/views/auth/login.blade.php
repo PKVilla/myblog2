@@ -72,9 +72,8 @@
                                 @endif
                             </div>
                         </div>
-                      {{--   <button class="btn btn-primary"><a href="{{url('/redirect')}}">Login with Facebook</a></button>
-                        <button class="btn btn-primary"><a href="{{url('/redirect')}}">Login with google</a></button> --}}
-
+                        <button class="btn btn-primary"><a href="{{url('/redirect/facebook')}}">Login with Facebook</a></button>
+                        <button class="btn btn-primary"><a href="{{url('/redirect/google')}}">Login with google</a></button>
                     </form>
                 </div>
             </div>

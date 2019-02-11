@@ -30,7 +30,7 @@
 				<h5 class="text-center font-italic text-muted">{{$perblogs->created_at->diffForHumans()}}</h5>
   				<h3 class="text-center animated jackInTheBox wow">{{$perblogs->posttitle}}</h3>
   				<div class="text-center">
-  				<img class="img-fluid" src="{{$perblogs->postimg_path}}" alt="Image is not available">
+  				<img class="img-fluid" src="/{{$perblogs->postimg_path}}" alt="Image is not available">
   				</div>
   				<p class="text-center lead text-justify perblogtext">{{$perblogs->postdescription}}</p>
   				{{-- <a href="#" class="like btn btn-primary">{{ Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like == 1 ? 'You like this post' : 'Like' : 'Like'  }}</a>

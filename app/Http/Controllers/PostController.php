@@ -93,9 +93,10 @@ class PostController extends Controller
     // this is to delete blog post in the admin side
     public function deletePost($id){
         $postdelete = Post::find($id);
+        // $dd($postdelete);
         $postdelete->delete();
         Session::flash('deletemessage', "item deleted successfully!");
-        return view ('/manageblog');
+        return redirect('/allpost');
     }
 
     // this is to redirect post to single page 

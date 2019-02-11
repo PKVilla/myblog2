@@ -8,7 +8,7 @@
 {{-- <div class="container caro"> --}}
   <div class="owl-carousel">
   @foreach($posts as $post)
-    <div><img class="img-fluid" src="{{$post->postimg_path}}" alt=""></div>
+    <div><img class="img-fluid" src="/{{$post->postimg_path}}" alt="no image"></div>
   @endforeach
   </div>
 
@@ -24,7 +24,7 @@
 
 	<hr class="container line animated slideInright">
 
-  {{-- body --}}
+    {{-- body --}}
   <div class="container posts mt-5">
       <div class="row">
         <div class="col-lg-8 col-md-6 col-sm-4">

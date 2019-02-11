@@ -38,8 +38,8 @@ class GoogleController extends Controller
                 $user->save();
                 Auth::loginUsingId($user->id);
             }
-            return redirect('pages.home');
-            // ->to('/pages.home');
+            return redirect()->to('/home');
+            
         } 
         catch (Exception $e) {
             return 'Something is not right';

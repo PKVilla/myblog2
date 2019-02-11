@@ -26,7 +26,11 @@
 						<td>{{$post->created_at->diffForHumans()}}</td>
 						<td class="text-center">
 							<a href="/editpost/{{$post->id}}/edit"><button class="btn btn-secondary">EDIT</button></a> 
-							<a href="/deletepost/{{$post->id}}/delete"><button class="btn btn-danger">DELETE</button></a>
+							<form method="POST" action="/deletepost/{{$post->id}}/delete">
+								{{csrf_field()}}
+								{{method_field('DELETE')}}
+								<button type="submit" class="btn btn-danger">DELETE</button>
+							</form>	
 						</td>
 					</tr>
 					@endforeach
